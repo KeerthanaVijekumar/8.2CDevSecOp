@@ -38,7 +38,7 @@ pipeline {
             curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-windows.zip
             powershell -Command "Expand-Archive sonar-scanner.zip -DestinationPath ."
             set SONAR_SCANNER=sonar-scanner-5.0.1.3006-windows\\bin\\sonar-scanner.bat
-            %SONAR_SCANNER%
+            %SONAR_SCANNER% -Dproject.settings=sonar-project.properties
           '''
         }
       }
